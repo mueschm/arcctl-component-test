@@ -45,4 +45,4 @@ jobs:
       - name: Create env
         run: ./arcctl apply env -d ${{env.DATACENTER}} ${{ env.PREVIEW_TAG }} --auto-approve true
       - name: Create component
-        run: ./arcctl deploy ${{env.DATACENTER}} ${{env.COMPONENT_FILE_PATH}} --auto-approve true
+        run: ./arcctl deploy -e ${{ env.PREVIEW_TAG }} ${{env.COMPONENT_FILE_PATH}} --auto-approve true
