@@ -43,6 +43,6 @@ jobs:
       - name: Test print accounts
         run: ./arcctl list account
       - name: Create env
-        run: ./arcctl apply env -d ${{env.DATACENTER}} ${{ env.PREVIEW_TAG }} ./environment.yml --auto-approve true
+        run: ./arcctl apply env --auto-approve true -d ${{env.DATACENTER}} ${{ env.PREVIEW_TAG }} ./environment.yml
       - name: Create component
-        run: ./arcctl deploy -e ${{ env.PREVIEW_TAG }} ${{env.COMPONENT_FILE_PATH}} --auto-approve true
+        run: ./arcctl deploy --auto-approve true -e ${{ env.PREVIEW_TAG }} ${{env.COMPONENT_FILE_PATH}}
