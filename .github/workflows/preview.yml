@@ -28,7 +28,7 @@ jobs:
       - name: Test print accounts
         run: ./arcctl list account
       - name: Remove Environemnt
-        run: ./arcctl destroy environment -d ${{env.DATACENTER}} ${{ env.PREVIEW_TAG }} --auto-aprove true
+        run: ./arcctl destroy environment -d ${{env.DATACENTER}} ${{ env.PREVIEW_TAG }} --auto-approve true
   architect_create_preview:
     if: github.event.action != 'closed'
     runs-on: ubuntu-latest
@@ -43,6 +43,6 @@ jobs:
       - name: Test print accounts
         run: ./arcctl list account
       - name: Create env
-        run: ./arcctl apply env -d ${{env.DATACENTER}} ${{ env.PREVIEW_TAG }} --auto-aprove true
+        run: ./arcctl apply env -d ${{env.DATACENTER}} ${{ env.PREVIEW_TAG }} --auto-approve true
       - name: Create component
-        run: ./arcctl deploy ${{env.DATACENTER}} ${{env.COMPONENT_FILE_PATH}} --auto-aprove true
+        run: ./arcctl deploy ${{env.DATACENTER}} ${{env.COMPONENT_FILE_PATH}} --auto-approve true
